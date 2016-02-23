@@ -47,6 +47,7 @@ Meteor.methods({
       : generateCode();
 
     if (typeof twoFactor.sendCode === 'function') {
+      this.unblock();
       twoFactor.sendCode(user, code);
     }
 
